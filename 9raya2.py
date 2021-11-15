@@ -66,3 +66,44 @@ except ZeroDivisionError:
 print(student1.gpa_student())
 print(student2.gpa_student())
 print(gpa1_1)
+
+def presuf(str):
+    L = [-1] + [0] * (len(str))
+    k = len(str)
+
+    index = 0
+    i = 0
+    while i < len(str) - 1 and len(str) - 1 - k <= i:
+        print(str[0: i+1], str[len(str) - 1 - i :len(str)])
+        if str[0:i+1] == str[len(str) - 1 - i :len(str)]:
+            index = str[0:i+1]
+            k -= 1
+            L[i+1] = len(index)
+            i += 1
+
+        else:
+            
+            index = 0
+            k == len(str)
+            i += 1
+    print(L)
+    return L
+def find(arr1,arr2):
+    l = presuf(arr1)
+    k = 0
+    i = 0
+    j = 0
+    str = ""
+    while k < len(arr1) and i < len(arr2):
+        if arr1[i] == arr2[j]:
+            str += arr1[i]
+            i += 1
+            j += 1
+        if j == len(arr1):
+            return True
+        else:
+            k += len(str) - l[i]
+            j = k
+            i = 0
+            str = ""
+print(find("ABC","ABEJDABC"))
